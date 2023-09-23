@@ -47,7 +47,7 @@ def backpack_all(gear: dict, max_weight=10) -> set:
     """
     result = set()
     # все возможные комбинации предметов , от 1 до max
-    # через comprehension не получилось записать, не вижу в чем ошибка.Может,неполная запись из-за переполнения?
+    # через comprehension не получилось записать, не вижу в чем ошибка.
     # combination = { (c, dict_sum_by_keys(c, gear)) for i in range(1, len(gear))
     #                for c in itertools.combinations(gear.keys(), i) if dict_sum_by_keys(c, gear) <= max_weight }
     for i in range(1, len(gear)):
