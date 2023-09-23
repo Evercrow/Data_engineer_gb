@@ -27,7 +27,7 @@ def backpack_natural(gear: dict, max_weight=10) -> tuple:
     return result, total_weight
 
 
-def dict_sum_by_keys(keys, my_dict:dict)->float:
+def dict_sum_by_keys(keys, my_dict: dict) -> float:
     res = 0
     for k, v in my_dict.items():
         if k in set(keys):
