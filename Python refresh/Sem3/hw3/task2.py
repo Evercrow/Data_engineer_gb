@@ -2,9 +2,10 @@ import re
 from collections import Counter as Counter
 
 
-def match_words(big_string,word_length)->list:
+def match_words(big_string,word_length=1)->list:
     # задаем часть регулярного выражения, отвечающего за количество совпадений, вставляем через интерполяцию f,"+" для любой длины
-    # letter_matches = '+'
+    if word_length == 1:
+        letter_matches = '+'
     letter_matches = f'{{{word_length},}}'  # не "служебные" фигурные скобки задваиваем в f-строках
     return re.findall(rf'[^\W\d_]{letter_matches}', big_string)
 

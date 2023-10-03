@@ -1,4 +1,4 @@
-def find_duplicates(mix: list) -> list:
+itdef find_duplicates(mix: list) -> list:
     """
     Дан список повторяющихся элементов. Вернуть список с дублирующимися элементами.
 В результирующем списке не должно быть дубликатов.
@@ -9,8 +9,8 @@ def find_duplicates(mix: list) -> list:
     for item in mix:
         if item not in uniques:
             uniques.add(item)
-            continue
-        copies.add(item)
+        else:
+            copies.add(item)
 
     return list(copies)
 
