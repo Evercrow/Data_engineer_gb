@@ -74,6 +74,7 @@ GEAR = {
     "книга": 1,
     "кружка": 0.2
 }
+#ToDo : duplicate input dict to avoid in-place changes
 bp = backpack_natural(GEAR, 5)
 print(f"Предметы в рюкзаке: {bp[0]} \n общий вес: {bp[1]}")
 for e in backpack_all(GEAR, 2):
