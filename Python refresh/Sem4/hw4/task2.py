@@ -7,7 +7,7 @@ def invert_kwargs_dict(**kwargs):
     где ключ — значение переданного аргумента, а значение — имя аргумента.
     Если ключ не хешируем, используйте его строковое представление.
     """
-    return {(i[1] if isinstance(i[1], typing.Hashable) else " ".join(map(str, i[1]))): i[0] for i in kwargs.items()}
+    return {(value if isinstance(value, typing.Hashable) else " ".join(map(str, value))) : key for key,value in kwargs.items()}
 # особенности тернарного оператора - работает только с одной переменной, поэтому его нужно изолировать в () от пары
 # ключ:значение в dict comprehension
 
