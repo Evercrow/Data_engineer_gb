@@ -13,8 +13,9 @@ def backpack_natural(gear: dict, max_weight=10) -> tuple:
     """
     result = set()
     total_weight = 0
-    while gear:
-        item = gear.popitem()
+    w_c = gear.copy()
+    while w_c:
+        item = w_c.popitem()
         total_weight += item[1]
         if (max_weight - total_weight) < 0:
             total_weight -= item[1]
@@ -32,7 +33,6 @@ def dict_sum_by_keys(keys, my_dict: dict) -> float:
     for k, v in my_dict.items():
         if k in set(keys):
             res += v
-    # print(set(keys),res)
     return res
 
 
@@ -46,10 +46,6 @@ def backpack_all(gear: dict, max_weight=10) -> set:
     :return:
     """
     result = set()
-    # все возможные комбинации предметов , от 1 до max
-    # через comprehension не получилось записать, не вижу в чем ошибка.
-    # combination = { (c, dict_sum_by_keys(c, gear)) for i in range(1, len(gear))
-    #                for c in itertools.combinations(gear.keys(), i) if dict_sum_by_keys(c, gear) <= max_weight }
     for i in range(1, len(gear)):
         for c in itertools.combinations(gear.keys(), i):
             t_w = dict_sum_by_keys(c, gear)
@@ -74,8 +70,9 @@ GEAR = {
     "книга": 1,
     "кружка": 0.2
 }
-#ToDo : duplicate input dict to avoid in-place changes
+TEST_WEIGHT = 2
 bp = backpack_natural(GEAR, 5)
 print(f"Предметы в рюкзаке: {bp[0]} \n общий вес: {bp[1]}")
-for e in backpack_all(GEAR, 2):
+print(f"\nListing all possible combinations for weight {TEST_WEIGHT}")
+for e in backpack_all(GEAR, TEST_WEIGHT):
     print(e)

@@ -2,11 +2,13 @@ import re
 from collections import Counter as Counter
 
 
-def match_words(big_string,word_length=1)->list:
-    # задаем часть регулярного выражения, отвечающего за количество совпадений, вставляем через интерполяцию f,"+" для любой длины
+def match_words(big_string, word_length=1) -> list:
+    # задаем часть регулярного выражения, отвечающего за количество совпадений, вставляем через интерполяцию f,
+    # "+" для любой длины
     if word_length == 1:
         letter_matches = '+'
-    letter_matches = f'{{{word_length},}}'  # не "служебные" фигурные скобки задваиваем в f-строках
+    else:
+        letter_matches = f'{{{word_length},}}'  # не "служебные" фигурные скобки задваиваем в f-строках
     return re.findall(rf'[^\W\d_]{letter_matches}', big_string)
 
 
@@ -49,5 +51,7 @@ HOW_MANY_WORDS = 10
 WORD_MINIMAL_LENGTH = 4
 with open(BIG_TEXT_FILE, 'rt', encoding="UTF-8") as f:
     print(find_popular_words_collections(f.read().lower(), top=HOW_MANY_WORDS, word_length=WORD_MINIMAL_LENGTH))
+with open(BIG_TEXT_FILE, 'rt', encoding="UTF-8") as f:
+    print(find_popular_words_collections(f.read().lower(), top=HOW_MANY_WORDS))
 with open(BIG_TEXT_FILE, 'rt', encoding="UTF-8") as f:
     print(find_popular_words_manual(f.read().lower(), top=HOW_MANY_WORDS, word_length=WORD_MINIMAL_LENGTH))
