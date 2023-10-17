@@ -1,11 +1,11 @@
-def bonus_salaries(names: list[str], wages: list[int], bonus: list[str]) -> dict[str, float]:
+def bonus_salaries(names: list[str], wages: list[int], bonuses: list[str]) -> dict[str, float]:
     """
     однострочный генератор словаря, который принимает на вход три списка одинаковой длины: имена str, ставка int,
      премия str с указанием процентов вида “10.25%”.
     В результате получаем словарь с именем в качестве ключа и суммой премии в качестве значения
     :return:
     """
-    return {n: w * float(b[:-1])/100 for n, w, b in zip(names, wages, bonus)}
+    return {name: wage * float(bonus[:-1])/100 for name, wage, bonus in zip(names, wages, bonuses)}
 
 
 if __name__ == "__main__":
