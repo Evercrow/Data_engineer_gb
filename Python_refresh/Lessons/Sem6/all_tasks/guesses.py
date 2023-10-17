@@ -45,7 +45,7 @@ def custom_guess(riddle: str, answers: list, guess_limit: int = 3) -> int:
     """
     print(f"Загадка:\n{riddle}")
     check_answer = set(map(str, answers))
-    guess_count: int = 0
+    guess_count: int = 1
     while guess_count <= guess_limit:
         guess = input("Введите вашу отгадку: ")
         if guess in check_answer:
@@ -54,7 +54,7 @@ def custom_guess(riddle: str, answers: list, guess_limit: int = 3) -> int:
             return guess_count
         else:
             print("Не отгадали")
-        print(f"У вас осталось {guess_limit - 1 - guess_count} попыток")
+        print(f"У вас осталось {guess_limit - guess_count} попыток")
         guess_count += 1
     else:
         print("Ваши попытки закончились, вы проиграли")

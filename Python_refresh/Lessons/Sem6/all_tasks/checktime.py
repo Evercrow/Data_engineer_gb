@@ -9,7 +9,8 @@ from datetime import datetime as dt
 from calendar import isleap
 
 
-def check_date(date: str):
+def check_date(*params):
+    date: str = _check_params(params[1:])
     day, month, year = list(map(int, date.split('.')))
     try:
         dt(day=day, month=month, year=year)
@@ -28,3 +29,13 @@ def _check_leap(year: int):
 
 if __name__ == "__main__":
     print(check_date('20.11.2000'))
+
+
+def _check_params(params: tuple) -> str:
+    if len(params) != 3:
+        raise ParameterCount("Параметров должно быть 3, используйте формат вызова:\npython date_console.py dd mm yyyy")
+    return '.'.join(params)
+
+
+class ParameterCount(Exception):
+    pass

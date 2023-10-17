@@ -18,7 +18,7 @@ def guess_game(lower_limit=0, upper_limit=1000, guess_limit=10) -> bool:
             return True
         else:
             print("Больше")
-        print(f"У вас осталось {10 - guess_count} попыток")
+        print(f"У вас осталось {guess_limit - guess_count} попыток")
         guess_count += 1
     else:
         print("Ваши попытки закончились, вы проиграли")
