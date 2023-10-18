@@ -9,8 +9,7 @@ VOWEL_SET = ["A", "E", "I", "O", "U", "Y"]
 
 
 def name_filler(f_name: str, line_num: int):
-    pass
-    with open(f_name, "a", encoding="UTF-8") as f:
+    with open(f_name, "w", encoding="UTF-8") as f:
         for _ in range(line_num):
             name = []
             for _ in range(random.randint(4, 7)):
