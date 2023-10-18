@@ -1,3 +1,5 @@
 *.idea/
 *venv/
 *"Python refresh"
+*Sem7/dump_dir/
+*Sem7/other_dir/
