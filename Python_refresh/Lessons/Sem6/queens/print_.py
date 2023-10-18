@@ -1,3 +1,5 @@
+from .generator import *
+
 EMPTY = "|   "
 QUEEN = "| Q "
 BORDER = "+---"
@@ -14,3 +16,7 @@ def print_board(board: list[int]):
 
 def show_check_result(flag: bool):
     print(f"Такая комбинация ферзей {'' if flag else 'не'}верная")
+
+
+def print_combo(combo: tuple):
+    print_board(fill_array(combo))
