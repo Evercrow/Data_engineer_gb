@@ -9,7 +9,6 @@ def create_subdir(ext: str, wd: Path):
     try :
         cur_path.mkdir()
     except FileExistsError:
-
         pass
     for file in wd.iterdir():
         if file.suffix == "." + ext:

@@ -24,7 +24,7 @@ print("--------")
 
 #  Если создавать сразу 8 любых ферзей, вероятность получить удачную комбинацию на доске в 8х8 исчезающе мала,
 #  меньше миллионной процента. Поэтому для быстроты будем генерить только 4 ферзя,
-#  а полные комбинации найдем через поиск удачных позиций
+#  а полные комбинации найдем через поиск свободных позиций
 COMBINATIONS_TO_FIND = 4
 QUEEN_AMOUNT = 4
 print("Генерация любых 4-х ферзей")
@@ -36,3 +36,10 @@ while counter < COMBINATIONS_TO_FIND:
         print(r.index_to_str(new_combo))
         p.print_combo(new_combo)
 print(f"Найдено {COMBINATIONS_TO_FIND} успешных комбинаций\n")
+print("--------")
+
+print(f"Поиск {COMBINATIONS_TO_FIND} правильных полных комбинаций")
+combos = c.find_N_correct_combos(COMBINATIONS_TO_FIND)
+c.test_and_show_combinations(combos)
+
+

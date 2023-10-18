@@ -1,17 +1,24 @@
+import string
+
 from .generator import *
 
 EMPTY = "|   "
 QUEEN = "| Q "
 BORDER = "+---"
+COORD_X = string.ascii_uppercase
+SIZE = 8
 
 
 def print_board(board: list[int]):
-    print(BORDER * 8, end="+\n")
-    for row in range(8):
-        for col in range(8):
+    print(BORDER * SIZE, end="+\n")
+    for row in range(SIZE):
+        for col in range(SIZE):
             print(f'{EMPTY if board[row][col] == 0 else QUEEN}', end='')
-        print("|")
-        print(BORDER * 8, end="+\n")
+        print(f"| {SIZE - row}")
+        print(BORDER * SIZE, end="+\n")
+    for l in COORD_X[:SIZE]:
+        print(f"| {l} ", end="")
+    print()
 
 
 def show_check_result(flag: bool):

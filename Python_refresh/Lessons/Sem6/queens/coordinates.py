@@ -20,11 +20,14 @@ def read_position_str(pos_str: str, board_size=8) -> tuple:
     return tuple(pairs)
 
 
-def index_to_str(combo:tuple,board_size=8)->str:
+def index_to_str(combo: tuple, board_size=8) -> str:
+    """
+    перевод кортежа индексов в сортированную строку шахматных позиций
+    """
     pos_str = []
     for pos in combo:
         y = str(abs(pos[0] - board_size))
         x = X_COORD[pos[1]]
-        pos_str.append(x+y)
+        pos_str.append(x + y)
     pos_str.sort()
     return " ".join(pos_str)

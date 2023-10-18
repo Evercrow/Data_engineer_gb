@@ -1,15 +1,14 @@
 from random import randint, choice
 
-__all__ =["generate_any_queen","generate_correct_queen","fill_array"]
+__all__ = ["generate_any_queen", "generate_free_queen", "fill_array"]
+
+
 def generate_any_queen() -> tuple:
     return randint(0, 7), randint(0, 7)
 
 
-def generate_correct_queen(red_moves: tuple, board_size=8) -> tuple:
-    board_set = set(range(board_size))
-    free_rows = board_set - red_moves[0]
-    free_cols = board_set - red_moves[1]
-    return choice(free_cols), choice(free_rows)
+def generate_free_queen(free_rows: set, free_cols: set, board_size=8) -> tuple:
+    return choice(tuple(free_cols)), choice(tuple(free_rows))
 
 
 def fill_array(index_pairs: tuple) -> list:
