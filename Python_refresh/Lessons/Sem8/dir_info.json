@@ -1,0 +1,146 @@
+[
+  {
+    "name": "convert_from_pickle.py",
+    "parent": ".",
+    "type": "file",
+    "size": 2233
+  },
+  {
+    "name": "directory_describe.py",
+    "parent": ".",
+    "type": "file",
+    "size": 4719
+  },
+  {
+    "name": "dir_info.csv",
+    "parent": ".",
+    "type": "file",
+    "size": 0
+  },
+  {
+    "name": "dir_info.json",
+    "parent": ".",
+    "type": "file",
+    "size": 0
+  },
+  {
+    "name": "dir_info.pickle",
+    "parent": ".",
+    "type": "file",
+    "size": 0
+  },
+  {
+    "name": "id_data.csv",
+    "parent": "files",
+    "type": "file",
+    "size": 71
+  },
+  {
+    "name": "id_data.json",
+    "parent": "files",
+    "type": "file",
+    "size": 256
+  },
+  {
+    "name": "id_data.pickle",
+    "parent": "files",
+    "type": "file",
+    "size": 98
+  },
+  {
+    "name": "names.txt",
+    "parent": "files",
+    "type": "file",
+    "size": 142
+  },
+  {
+    "name": "numbers.txt",
+    "parent": "files",
+    "type": "file",
+    "size": 481
+  },
+  {
+    "name": "result.json",
+    "parent": "files",
+    "type": "file",
+    "size": 558
+  },
+  {
+    "name": "result.pickle",
+    "parent": "files",
+    "type": "file",
+    "size": 358
+  },
+  {
+    "name": "results.txt",
+    "parent": "files",
+    "type": "file",
+    "size": 371
+  },
+  {
+    "name": "task_4_res.csv",
+    "parent": "files",
+    "type": "file",
+    "size": 54
+  },
+  {
+    "name": "task_4_res.json",
+    "parent": "files",
+    "type": "file",
+    "size": 370
+  },
+  {
+    "name": "task_4_res.pickle",
+    "parent": "files",
+    "type": "file",
+    "size": 167
+  },
+  {
+    "name": "files",
+    "parent": ".",
+    "type": "dir",
+    "size": 2926
+  },
+  {
+    "name": "input_to_id_csv.py",
+    "parent": ".",
+    "type": "file",
+    "size": 2681
+  },
+  {
+    "name": "json_to_pickle.py",
+    "parent": ".",
+    "type": "file",
+    "size": 665
+  },
+  {
+    "name": "manual_csv_read_to_json.py",
+    "parent": ".",
+    "type": "file",
+    "size": 1866
+  },
+  {
+    "name": "results_to_json.py",
+    "parent": ".",
+    "type": "file",
+    "size": 932
+  },
+  {
+    "name": "tasks.md",
+    "parent": ".",
+    "type": "file",
+    "size": 1961
+  },
+  {
+    "name": "__init__.py",
+    "parent": ".",
+    "type": "file",
+    "size": 0
+  },
+  {
+    "name": "",
+    "parent": ".",
+    "type": "dir",
+    "size": 17983
+  }
+]

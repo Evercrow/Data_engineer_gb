@@ -3,6 +3,7 @@ import json
 from pathlib import Path
 
 
+
 def csv_to_json(file_to_read, file_to_write):
     """
     Прочитайте созданный в прошлом задании csv файл без использования csv.DictReader.
@@ -18,13 +19,14 @@ def csv_to_json(file_to_read, file_to_write):
         headers = csv.Sniffer().has_header(f.read(200))
         f.seek(0)
         with open(Path(file_to_write), 'w', encoding='utf-8') as r:
+            # чтобы корректно потом считывалось, вместо отдельных словарей, соберем перед записью в файл общий список
             all_data = []
+            for line in csv_unique:
+                print(line)
             for i, line in enumerate(csv_unique):
                 if not headers or i != 0:
                     u_id, name, access = line
                     temp = {hash(f'{name}_{u_id}'): [f'{u_id.zfill(10)}', name.capitalize(), int(access)]}
-                    # чтобы корректно потом считывалось, вместо отдельных словарей, общий список кинем в файл
-                    # json.dump(temp, r, indent=4)
                     all_data.append(temp)
             json.dump(all_data, r, indent=4)
 
